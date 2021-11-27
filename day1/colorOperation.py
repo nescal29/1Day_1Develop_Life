@@ -1,16 +1,19 @@
 import random
+from outputProcess import OutputProcess
 
-class ColorManager():
+class ColorOperation():
   def __init__(self):
     self.colorCode: str = '#'
+    self.outputPrc = OutputProcess()
 
   def randomGenerate(self):
     r: int = lambda: random.randint(0, 255)
     self.colorCode += '%02X%02X%02X' % (r(), r(), r())
     print('Generated ColorCode :', self.colorCode)
-    return self.colorCode
+
+    self.outputPrc.inputData(self.colorCode)
     
 
 if __name__ == '__main__':
-  colmg = ColorManager()
-  colmg.randomGenerate()
+  colop = ColorOperation()
+  colop.randomGenerate()
