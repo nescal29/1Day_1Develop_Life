@@ -9,7 +9,7 @@ class ColorOperation():
   def randomGenerate(self):
     r: int = lambda: random.randint(0, 255)
     self.colorCode += '%02X%02X%02X' % (r(), r(), r())
-    print('Generated ColorCode :', self.colorCode)
+    print('Generated ColorCode :\033[32m', self.colorCode, '\033[0m')
 
     self.outputPrc.inputData(self.colorCode)
     
